@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <label for="input">The number</label>
+    <input type="number" id="input" max="10000" min="0" oninput="isPrime();">
+</form>
+
+<span id="result"></span>
+
+<script>
+
+    function isPrime() {
+
+        input = document.getElementById("input").value;
+        theResult = document.getElementById("result");
+
+        if(checkPrime(input)){
+            theResult.innerHTML = "This is a Prime number";
+        }else{
+            theResult.innerHTML = "This is NOT a Prime number";
+        }
+    }
+
+    function checkPrime(a) {
+
+        if ((a == 0) || (a == 1)){
+            return false
+        }
+        for(i = 1; i <= a/2;i++){
+            if(a % i == 0 && i != 1){
+                return false
+            }
+        }
+        return true
+    }
+
+</script>
+
+</body>
+</html>
